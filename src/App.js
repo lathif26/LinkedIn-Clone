@@ -13,6 +13,7 @@ function App() {
   const user = useSelector(selectUser)
   const dispatch = useDispatch();
  useEffect(() => {
+  const changes = () => {
  auth.onAuthStateChanged(userAuth => {
   if (userAuth){
     //user logged in
@@ -27,7 +28,8 @@ function App() {
     dispatch(logout());
   }
  })
- 
+};
+changes();
  }, [])
  
   
